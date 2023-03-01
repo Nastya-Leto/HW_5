@@ -12,6 +12,14 @@ public class TestEnterprise {
         $(byText("Solutions")).hover();
         $(byText("Enterprise")).click();
         $("div h1").shouldHave(text("Build like the best"));
+    }
+
+        @Test
+        void dragAndDropTest() {
+            open("https://the-internet.herokuapp.com/drag_and_drop");
+            $("#column-a").dragAndDropTo($("#column-b"));
+            $("#column-a").$("header").shouldHave(text("B"));
+            $("#column-b").$("header").shouldHave(text("A"));
 
     }
 }
